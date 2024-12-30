@@ -1,9 +1,6 @@
 package com.umesh.Ecom_App.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 //import lombok.AllArgsConstructor;
 //import lombok.NoArgsConstructor;
 import org.hibernate.type.descriptor.jdbc.NVarcharJdbcType;
@@ -25,6 +22,37 @@ public class Product {
     private Date releaseDate;
     private boolean available;
     private int quantity;
+
+    // Image Data
+
+    private String imageName;
+    private String imageType;
+    @Lob
+    private byte[] imageData;
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public String getImageType() {
+        return imageType;
+    }
+
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
+    }
+
+    public byte[] getImageData() {
+        return imageData;
+    }
+
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
+    }
 
     public int getId() {
         return id;
